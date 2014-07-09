@@ -1,0 +1,24 @@
+{
+  "name": "Ember Batch Find",
+  "version": "0.0.1",
+  "authors": [
+    "KeradGames"
+  ],
+  "description": "Adds the ability find resources in batches.",
+  "main": "batch_find.js",
+  "keywords": [
+    "ember",
+    "batch-find",
+    "batch",
+    "find"
+  ],
+  "license": "MIT",
+  "homepage": "www.keradgames.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
