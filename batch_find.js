@@ -93,7 +93,5 @@
     }
   };
 
-  exports.Store.reopen({
-    batchFind: batchFind
-  });
-})(App);
+  exports.batchFind = batchFind;
+})(window);
