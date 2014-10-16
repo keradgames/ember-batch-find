@@ -64,6 +64,10 @@
 
   var flushQueue = function(store, key, tasks) {
     var ids = Object.keys(tasks);
+    if (!key || !ids.get('length')) {
+      return;
+    }
+
     var resolveFunc, record, id;
 
     findMany(store, key, ids).then(function() {
