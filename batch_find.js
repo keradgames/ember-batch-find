@@ -97,5 +97,34 @@
     }
   };
 
+  /**
+   * Shortcut for perform batch find request against a specific model.
+   * Example:
+   *
+   *    App.Post = DS.Model.extend({
+   *      user: batchFind.belongsTo('user')
+   *    });
+   *
+   * @param  {String} modelName
+   * @return {Ember.computed}
+   */
+  var belongsTo = function(modelName) {
+    if (!modelName) {
+      throw new Error('batchFind.belongsTo method requires modelName argument');
+    }
+
+    var attr = 'data.' + modelName + '_id';
+
+    return Ember.computed(attr, function() {
+      var id = this.get(attr);
+
+      if (id) {
+        return batchFind.call(this.get('store'), modelName, id.toString());
+      }
+    });
+  };
+
+  batchFind.belongsTo = belongsTo;
+
   exports.batchFind = batchFind;
 })(window);
