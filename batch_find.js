@@ -113,9 +113,8 @@
       throw new Error('batchFind.belongsTo method requires modelName argument');
     }
 
-    var attr = 'data.' + modelName + '_id';
-
-    return Ember.computed(attr, function() {
+    return Ember.computed(function(key) {
+      var attr = 'data.' + key.underscore() + '_id';
       var id = this.get(attr);
 
       if (id) {
